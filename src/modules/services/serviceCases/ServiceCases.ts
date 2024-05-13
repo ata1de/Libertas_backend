@@ -10,7 +10,7 @@ export class ServiceCases {
 
         const services = await prisma.services.findMany({
             skip: randomOffset,
-            // take: 3
+            take: 3
         });
 
         return services;
