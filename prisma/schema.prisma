@@ -35,3 +35,12 @@ model Service {
   @@map("services")
 
 }
+
+model Cliente {
+  id String @id @default(uuid())
+  name String 
+  email String @unique
+  demand String
+  phone String
+  company String
+}
