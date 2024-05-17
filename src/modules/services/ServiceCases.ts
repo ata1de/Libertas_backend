@@ -1,4 +1,4 @@
-import { prisma } from "../../../prisma/client";
+import { prisma } from "../../prisma/client";
 
 export class ServiceCases {
     async show() {
@@ -19,10 +19,13 @@ export class ServiceCases {
     async findByName(name:string, page:number, perPage:number) {
         const offset = (page -1) * perPage
 
-        const service = await prisma.service.findMany({
+        const trimmedName = name.trim() // Tira possiveis espaços no inicio ou no fim da palavra
+
+        const services = await prisma.service.findMany({
             where: {
                 name: {
-                    contains: name.toLowerCase()
+                    contains: trimmedName,
+                    mode: 'insensitive', // Adiciona insensibilidade a maiúsculas e minúsculas
                 }
             }, 
             skip: offset,
@@ -31,9 +34,10 @@ export class ServiceCases {
         })
 
         return {
-            services: service,
+            services: services,
             page,
-            perPage
+            perPage,
+            name: name
           }
 
     }

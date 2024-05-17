@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ServiceCases } from "../modules/services/serviceCases/ServiceCases";
+import { ServiceCases } from "../modules/services/ServiceCases";
 import { getPaginationParams } from "../helpers/GetPagination";
 
 export class ServiceController {
@@ -19,9 +19,10 @@ export class ServiceController {
 
     }
 
+    // GET/services/search?name=
     async search(req: Request, res: Response) {
         const servicesCases = new ServiceCases()
-        const { name } = req.body
+        const  { name } = req.query
         const [page, perPage ] = getPaginationParams(req.query)  
 
 

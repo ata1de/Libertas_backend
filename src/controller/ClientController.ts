@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ClientCase } from "../modules/cliente/clienteCase/ClienteCase";
+import { ClientCase } from "../modules/cliente/ClienteCase";
 
 
 export class ClientController {
