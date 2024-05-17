@@ -15,8 +15,8 @@ export class ClientCase {
            data: {
             name,
             email,
-            company,
             phone,
+            company,
             demand
 
            }
