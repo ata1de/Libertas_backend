@@ -37,4 +37,21 @@ export class ServiceController {
         }
 
     }
+
+    // GET/services/all
+    async showAll(req: Request, res: Response) {
+        const servicesCases = new ServiceCases()
+
+
+        try {
+            const services = await servicesCases.showAll()
+
+            return res.status(200).json(services)
+        } catch (error) {
+            if (error instanceof Error) {
+                res.status(400).json({message: error.message})
+            }
+        }
+
+    }
 }

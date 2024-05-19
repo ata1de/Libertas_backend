@@ -41,4 +41,10 @@ export class ServiceCases {
           }
 
     }
+
+    async showAll() {
+        const services = await prisma.service.findMany()
+
+        return services
+    }
 }

@@ -8,6 +8,7 @@ const routes = Router();
 
 routes.get('/services', serviceController.show);
 routes.get('/services/search', serviceController.search)
+routes.get('/services/all', serviceController.showAll)
 
 routes.post('/', clientController.create)
 
