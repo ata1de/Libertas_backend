@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migration": "cross-env DATABASE_HOST='localhost' yarn prisma migrate dev && yarn prisma generate"
+    "migration": "cross-env DATABASE_HOST='localhost' yarn prisma migrate dev && yarn prisma generate",
+    "build": "tsup src",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
