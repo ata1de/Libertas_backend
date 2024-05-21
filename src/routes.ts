@@ -11,6 +11,7 @@ routes.get('/services/search', serviceController.search)
 routes.get('/services/all', serviceController.showAll)
 
 routes.post('/', clientController.create)
+
 routes.get('/', (req: Request, res:Response) => {
     return res.json('hello word')
 })
