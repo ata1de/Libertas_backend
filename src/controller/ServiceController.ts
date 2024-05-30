@@ -54,4 +54,41 @@ export class ServiceController {
         }
 
     }
+
+    async createService(req: Request, res: Response) {
+        const servicesCases = new ServiceCases()
+        const { name, description} = req.body
+
+
+        try {
+            const service = await servicesCases.create({name, description})
+
+            return res.status(200).json(service)
+        } catch (error) {
+            if (error instanceof Error) {
+                res.status(400).json({message: error.message})
+            }
+        }
+
+    }
+
+    async deleteService(req: Request, res: Response) {
+        const servicesCases = new ServiceCases();
+        const {id} = req.params;
+    
+        // Verificação se id é uma string
+        if (typeof id !== 'string') {
+          return res.status(400).json({ message: 'ID must be a string' });
+        }
+    
+        try {
+          const service = await servicesCases.delete(id);
+    
+          return res.status(200).send('Service DELETED!');
+        } catch (error) {
+          if (error instanceof Error) {
+            res.status(400).json({ message: error.message });
+          }
+        }
+      }
 }

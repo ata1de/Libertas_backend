@@ -1,4 +1,5 @@
 import { prisma } from "../../prisma/client";
+import { ServiceType } from "../type";
 
 export class ServiceCases {
     async show() {
@@ -46,5 +47,23 @@ export class ServiceCases {
         const services = await prisma.service.findMany()
 
         return services
+    }
+
+    async create({name, description}: ServiceType) {
+        const service = await prisma.service.create({
+            data: {
+                name,
+                description
+            }
+        })
+
+        return service
+    }
+
+    async delete(id: string) {
+        const deletedService = await prisma.service.delete({
+            where: { id },
+          });
+          return deletedService;
     }
 }
