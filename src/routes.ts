@@ -14,6 +14,7 @@ routes.get('/clients', clientController.getAllClient)
 routes.post('/', clientController.create)
 routes.post('/services', serviceController.createService)
 
+
 routes.delete('/service/:id', serviceController.deleteService)
 
 routes.get('/', (req: Request, res:Response) => {
