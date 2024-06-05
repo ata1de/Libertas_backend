@@ -17,4 +17,18 @@ export class ClientController {
             }
         }
     }
+
+    async getAllClient(req: Request, res: Response) {
+        const clientCase = new ClientCase()
+
+        try {
+            const client = await clientCase.getAllClient()
+
+            return res.status(200).json(client)
+        } catch (error) {
+            if (error instanceof Error) {
+                res.status(400).json({message: error.message})
+            }
+        }
+    }   
 }
