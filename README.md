@@ -13,13 +13,17 @@
 
 ## ☕ More about 
 
-  ![image](https://github.com/ata1de/Libertas_backend/assets/121314892/ad07d5e2-5e43-421f-82dd-cd80d6153882)
+  ![image](https://github.com/ata1de/Libertas_backend/assets/121314892/64238ba1-ca1d-4e98-a83f-2376dccc0382)
 
-  * **Sobre**: Learn a little about the company and what it offers ; 
-  * **Serviços**: Shows 3 random services
-  * **Historia**: A tab to go to showing the company's history
-  * **Conte Conosco**: See contact infos and send a message 
-  * **Input**: Search for a service by name or all services ;
+
+  * **GET-'/'**: Returns a welcome message ; 
+  * **GET-'/services'**: Shows 3 random services
+  * **GET-'/services/search'**: Searches for services based on search criteria
+  * **GET-/services/all**: Returns all available services
+  * **GET-/clients**: Returns all registered clients  ;
+  * **POST-'/'**: Creates a new client  ;
+  * **POST-/services**: Creates a new service  ;
+  * **DELETE-/service/:id**: Deletes a service by ID  ;
 <br>
 Besides that, obviously the project is 100% adaptable for mobile devices and strategy planned for future software maintenance.
 
@@ -53,7 +57,7 @@ Instale as dependências
 npm install
 ```
 Tenha o postgres ou Docker instalado
-- Docker
+- Docker (if you have docker you need to configure the repository to use it)
   ```
   https://docs.docker.com/desktop/install/windows-install/
   ```
