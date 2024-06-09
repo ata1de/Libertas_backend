@@ -18,7 +18,7 @@ routes.post('/services', serviceController.createService)
 routes.delete('/service/:id', serviceController.deleteService)
 
 routes.get('/', (req: Request, res:Response) => {
-    return res.json('hello word')
+    return res.json('hello world')
 })
 
 export { routes };
