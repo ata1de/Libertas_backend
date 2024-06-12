@@ -25,7 +25,7 @@ async function  MailHandler(emailConfig: {
         })
     
         await transporter.sendMail({
-            from: `${emailConfig.userName} <${emailConfig.userEmail}>`,
+            from: process.env.EMAIL_USER,
             to: process.env.EMAIL_RECEIVER,   
             subject: emailConfig.subject,
             html: emailConfig.html
