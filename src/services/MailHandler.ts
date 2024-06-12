@@ -11,9 +11,9 @@ async function  MailHandler(emailConfig: {
 })  {
     try {
         const transporter = nodemailer.createTransport({
-            host: 'smtp.office365.com',
+            host: 'smtp-mail.outlook.com',
             port: 587,
-            secure: false,
+            secure: false, // true somente para a porta 465
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
