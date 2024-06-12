@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ServiceCases } from "../modules/services/ServiceCases";
 import { getPaginationParams } from "../helpers/GetPagination";
 
-export class ServiceController {
+class ServiceController {
     async show(req: Request, res: Response) {
         const servicesCases = new ServiceCases()
 
@@ -92,3 +92,5 @@ export class ServiceController {
         }
       }
 }
+
+export default new ServiceController()

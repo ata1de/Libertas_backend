@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ClientCase } from "../modules/cliente/ClienteCase";
 
 
-export class ClientController {
+class ClientController {
     async create(req: Request ,res: Response) {
         const clientCase = new ClientCase()
         const { name, email, demand, phone, company } = req.body
@@ -32,3 +32,5 @@ export class ClientController {
         }
     }   
 }
+
+export default new ClientController()
