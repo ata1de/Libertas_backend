@@ -21,8 +21,8 @@ async function  MailHandler(emailConfig: {
         })
     
         await transporter.sendMail({
-            from: emailConfig.userEmail,
-            to: emailConfig.userName,
+            from: process.env.EMAIL_USER,
+            to: emailConfig.userEmail,   
             subject: emailConfig.subject,
             html: emailConfig.html
         })
