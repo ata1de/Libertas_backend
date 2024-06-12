@@ -28,7 +28,7 @@ class MailController {
             }
         } catch (error) {
             console.log(error)
-            return res.status(400).json({message: 'Erro ao enviar email'})
+            return res.status(400).json({message: `Erro ao enviar email: ${error}`})
         }
 }
 }
