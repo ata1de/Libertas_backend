@@ -15,7 +15,8 @@ async function  MailHandler(emailConfig: {
             port: 587,
             secure: false, // true somente para a porta 465
             tls: {
-                ciphers:'SSLv3'
+                ciphers:'SSLv3',
+                rejectUnauthorized: false,
             },
             auth: {
                 user: process.env.EMAIL_USER,
