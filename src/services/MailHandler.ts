@@ -10,10 +10,12 @@ async function  MailHandler(emailConfig: {
     html: string,
 })  {
     try {
+        console.log('EMAIL_USER:', process.env.EMAIL_USER);
+        console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
+
         const transporter = nodemailer.createTransport({
             host: 'smtp-mail.outlook.com',
             port: 587,
-            secure: false, // true somente para a porta 465
             tls: {
                 ciphers:'SSLv3',
                 rejectUnauthorized: false,
