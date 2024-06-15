@@ -30,9 +30,11 @@ async function  MailHandler(emailConfig: {
             subject: emailConfig.subject,
             html: emailConfig.html
         })
+
+        console.log('Email enviado com sucesso');
         return true
     } catch (error) {
-        console.log(error)
+        console.error('Erro ao enviar email:', error);
         return false
     }
 
