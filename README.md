@@ -47,16 +47,16 @@ Besides that, obviously the project is 100% adaptable for mobile devices and str
 ## ⬆ Next Steps
 * Make Client CRUD
 
-# ⚙️ Open and rnu project
-Clone o repositório
+# ⚙️ Open and run project
+Clone the repository
 ```
 https://github.com/ata1de/libertas_backend.git
 ```
-Instale as dependências
+Install the dependencies
 ```
 npm install
 ```
-Tenha o postgres ou Docker instalado
+Postgres or Docker installed
 - Docker (if you have docker you need to configure the repository to use it)
   ```
   https://docs.docker.com/desktop/install/windows-install/
@@ -65,15 +65,15 @@ Tenha o postgres ou Docker instalado
     ```
     https://www.postgresql.org/
     ```
-Rode as migrations
+Run migrations
 ```
 npx run migration
 ```
-Rode o projeto
+Run the project
 ```
 npm run dev
 ```
-Abra o link
+Open the link and enjoy yourself 😎
 ```
 http://localhost:3333
 ```
