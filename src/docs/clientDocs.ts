@@ -1,5 +1,38 @@
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Cliente:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           format: uuid
+ *           description: Identificador único do cliente
+ *         name:
+ *           type: string
+ *           description: Nome do cliente
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: Endereço de e-mail do cliente
+ *         demand:
+ *           type: string
+ *           description: Demanda ou necessidade do cliente
+ *         phone:
+ *           type: string
+ *           description: Número de telefone do cliente
+ *         company:
+ *           type: string
+ *           description: Nome da empresa do cliente
+ *       required:
+ *         - id
+ *         - name
+ *         - email
+ */
+
+/**
+ * @swagger
  * /:
  *   post:
  *     summary: Create a new client
